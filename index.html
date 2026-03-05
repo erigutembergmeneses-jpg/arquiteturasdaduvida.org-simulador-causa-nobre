@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Ético · A Armadilha da Causa Nobre</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>⚖️ A Armadilha da Causa Nobre</h1>
+                <p class="subtitle">Simulador Ético · Decisões em contexto de crime hediondo</p>
+                <div class="badge-container">
+                    <span class="badge">🎭 roleplay</span>
+                    <span class="badge">⚡ dilema real</span>
+                    <span class="badge">📊 feedback STF</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Área principal do simulador -->
+        <main class="simulator-container" id="simulator">
+            <!-- Tela de introdução -->
+            <div id="intro-screen" class="screen active">
+                <div class="card intro-card">
+                    <h2>Bem-vindo(a), Promotor(a)</h2>
+                    
+                    <div class="case-context">
+                        <h3>📋 O Caso</h3>
+                        <p>Você é o(a) promotor(a) responsável por um caso de <strong>latrocínio (roubo seguido de morte)</strong> que comoveu a opinião pública. Uma criança de 8 anos foi morta durante o assalto ao carro da família. A comoção nacional é enorme, e a pressão por justiça é intensa.</p>
+                        
+                        <div class="case-details">
+                            <p><strong>Vítima:</strong> Laura Mendes, 8 anos</p>
+                            <p><strong>Acusado:</strong> Carlos Eduardo Silva, 24 anos, réu primário, confessou sob pressão</p>
+                            <p><strong>Provas principais:</strong> Reconhecimento fotográfico (realizado na delegacia), confissão informal e uma filmagem granulada que mostra um homem de estatura semelhante.</p>
+                        </div>
+                    </div>
+
+                    <div class="evidence-box">
+                        <h4>⚠️ NOVA PROVA</h4>
+                        <p>Hoje, <strong>48 horas antes do julgamento</strong>, sua equipe recebe uma prova excludente robusta:</p>
+                        <ul>
+                            <li><strong>Câmera de segurança de um banco</strong> (com data e hora) mostra Carlos Eduardo trabalhando como entregador a 45km do local do crime no momento exato do latrocínio.</li>
+                            <li><strong>Testemunha independente</strong> (gerente do estabelecimento) confirma que Carlos entregou uma refeição às 19h47 — horário do crime, segundo o laudo pericial.</li>
+                            <li><strong>Registro de geolocalização do aplicativo de entregas</strong> corrobora a presença no local.</li>
+                        </ul>
+                        <p class="evidence-note">A prova é consistente, verificada e foi obtida legalmente.</p>
+                    </div>
+
+                    <div class="dilema-box">
+                        <h3>🎭 O Dilema</h3>
+                        <p>Como promotor(a), você tem três opções:</p>
+                        <ol>
+                            <li><strong>Comunicar imediatamente à defesa</strong> e pedir a absolvição.</li>
+                            <li><strong>Ignorar a prova</strong> e prosseguir com o julgamento (afinal, "ele confessou").</li>
+                            <li><strong>Comunicar o fato ao juiz</strong>, mas sustentar a denúncia, deixando a decisão com o tribunal.</li>
+                        </ol>
+                        <p class="disclaimer">Suas escolhas revelarão padrões de <em>noble cause corruption</em>. Seja sincero(a).</p>
+                    </div>
+
+                    <button id="start-simulator" class="btn btn-primary">▶ Iniciar Simulação</button>
+                </div>
+            </div>
+
+            <!-- Tela de decisão 1 -->
+            <div id="decision1-screen" class="screen">
+                <div class="card decision-card">
+                    <div class="progress-indicator">Decisão 1/4 · O conflito interno</div>
+                    
+                    <h2>🔍 O que você faz com a prova?</h2>
+                    
+                    <div class="options-grid">
+                        <div class="option-card" data-value="comunicar">
+                            <h3>📢 Comunico imediatamente</h3>
+                            <p>Informo à defesa e ao juiz, pedindo a absolvição. A função do Ministério Público é buscar a justiça, não condenações a qualquer custo.</p>
+                            <div class="consequencia-hint">Transparência e fair play</div>
+                        </div>
+                        
+                        <div class="option-card" data-value="ignorar">
+                            <h3>🤫 Ignoro a prova</h3>
+                            <p>Ele confessou. A prova pode ser um erro. A família da vítima merece justiça. Não vou deixar um culpado escapar por um detalhe técnico.</p>
+                            <div class="consequencia-hint">Foco na condenação</div>
+                        </div>
+                        
+                        <div class="option-card" data-value="juiz">
+                            <h3>⚖️ Comunicar, mas manter denúncia</h3>
+                            <p>Entrego a prova ao juiz, mas mantenho a denúncia. Que o tribunal decida. Assim não posso ser acusado de omitir prova.</p>
+                            <div class="consequencia-hint">Abster-se da decisão</div>
+                        </div>
+                    </div>
+
+                    <div class="nav-buttons">
+                        <button class="btn btn-secondary" disabled>Anterior</button>
+                        <button id="next-decision1" class="btn btn-primary" disabled>Avançar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tela de decisão 2 -->
+            <div id="decision2-screen" class="screen">
+                <div class="card decision-card">
+                    <div class="progress-indicator">Decisão 2/4 · Pressão institucional</div>
+                    
+                    <h2>🗣️ O Procurador-Geral liga</h2>
+                    
+                    <div class="context-box">
+                        <p>O Procurador-Geral de Justiça liga para você, "informalmente":</p>
+                        <blockquote>"Olha, esse caso é midiático. A imprensa está de olho. Se esse sujeito for absolvido, vai parecer que o Ministério Público errou feio. A opinião pública quer justiça pela criança. Reconsidere sua posição."</blockquote>
+                    </div>
+
+                    <div class="options-grid">
+                        <div class="option-card" data-value="resiste">
+                            <h3>💪 Resisto à pressão</h3>
+                            <p>"Com todo respeito, Procurador, minha função é a lei. Vou cumprir meu dever."</p>
+                        </div>
+                        
+                        <div class="option-card" data-value="cede">
+                            <h3>😞 Cedo à pressão</h3>
+                            <p>"O senhor tem razão. Não posso deixar a instituição ser exposta. Mantenho a denúncia."</p>
+                        </div>
+                        
+                        <div class="option-card" data-value="denuncia">
+                            <h3>📞 Denuncio a pressão</h3>
+                            <p>Registro a ligação e comunico à Corregedoria. Isso é interferência indevida.</p>
+                        </div>
+                    </div>
+
+                    <div class="nav-buttons">
+                        <button id="prev-to1" class="btn btn-secondary">← Anterior</button>
+                        <button id="next-decision2" class="btn btn-primary" disabled>Avançar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tela de decisão 3 -->
+            <div id="decision3-screen" class="screen">
+                <div class="card decision-card">
+                    <div class="progress-indicator">Decisão 3/4 · A família da vítima</div>
+                    
+                    <h2>👨‍👩‍👧 A mãe de Laura implora</h2>
+                    
+                    <div class="context-box">
+                        <p>Ao sair do fórum, a mãe de Laura aborda você com lágrimas:</p>
+                        <blockquote>"Doutor, por favor, não deixe ele escapar. Minha filha era inocente. Se ele for solto, não vou aguentar. Eu confio no senhor."</blockquote>
+                        <p>Ela aperta sua mão com força. Você vê a dor genuína em seus olhos.</p>
+                    </div>
+
+                    <div class="options-grid">
+                        <div class="option-card" data-value="explica">
+                            <h3>🤝 Explico com empatia</h3>
+                            <p>"Entendo sua dor, mas a justiça exige que sigamos as provas. Se o acusado é inocente, o verdadeiro culpado continua solto. Ajudar a encontrá-lo é o caminho."</p>
+                        </div>
+                        
+                        <div class="option-card" data-value="omite">
+                            <h3>😶 Omite a prova excludente</h3>
+                            <p>"Fique tranquila, farei de tudo para que ele seja condenado." (Você não menciona a prova que o inocentaria.)</p>
+                        </div>
+                        
+                        <div class="option-card" data-value="acolhe_silêncio">
+                            <h3>🤐 Apenas acolho o choro</h3>
+                            <p>Fico em silêncio, deixo ela chorar no meu ombro, mas não digo nada sobre a prova.</p>
+                        </div>
+                    </div>
+
+                    <div class="nav-buttons">
+                        <button id="prev-to2" class="btn btn-secondary">← Anterior</button>
+                        <button id="next-decision3" class="btn btn-primary" disabled>Avançar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tela de decisão 4 -->
+            <div id="decision4-screen" class="screen">
+                <div class="card decision-card">
+                    <div class="progress-indicator">Decisão 4/4 · O momento final</div>
+                    
+                    <h2>🎤 Plenário do Júri</h2>
+                    
+                    <div class="context-box">
+                        <p>No plenário do Tribunal do Júri, diante dos jurados, você tem a palavra final. A prova excludente ainda não foi oficialmente juntada (você a reteve). O advogado de defesa, sem acesso à prova, faz um discurso genérico.</p>
+                        <p>Você percebe que o réu pode ser condenado injustamente se não agir agora.</p>
+                    </div>
+
+                    <div class="options-grid">
+                        <div class="option-card" data-value="confessa">
+                            <h3>📢 Revelo a prova em plenário</h3>
+                            <p>Levanto-me e informo ao juiz presidente: "Excelência, há uma prova nova que inocenta o réu. Requeiro a imediata absolvição."</p>
+                        </div>
+                        
+                        <div class="option-card" data-value="silencia">
+                            <h3>🔇 Mantenho silêncio</h3>
+                            <p>Faço minha sustentação normalmente, pedindo a condenação. A prova fica comigo.</p>
+                        </div>
+                        
+                        <div class="option-card" data-value="absolvição_sutil">
+                            <h3>⚖️ Faço um discurso ambíguo</h3>
+                            <p>"Jurados, a justiça deve ser feita. Se houver qualquer dúvida, devem absolver." (Sem revelar a prova, mas dando brecha.)</p>
+                        </div>
+                    </div>
+
+                    <div class="nav-buttons">
+                        <button id="prev-to3" class="btn btn-secondary">← Anterior</button>
+                        <button id="finish-simulator" class="btn btn-primary" disabled>Finalizar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tela de resultados -->
+            <div id="results-screen" class="screen">
+                <div class="card results-card">
+                    <h2 id="result-title"></h2>
+                    
+                    <div class="profile-badge" id="profile-badge"></div>
+                    
+                    <div class="score-container">
+                        <div class="score-meter">
+                            <div class="meter-label">Noble Cause Corruption</div>
+                            <div class="meter-bar">
+                                <div class="meter-fill" id="ncc-meter"></div>
+                            </div>
+                            <span id="ncc-level"></span>
+                        </div>
+                        
+                        <div class="score-meter">
+                            <div class="meter-label">Fidelidade ao Direito</div>
+                            <div class="meter-bar">
+                                <div class="meter-fill" id="direito-meter"></div>
+                            </div>
+                            <span id="direito-level"></span>
+                        </div>
+                    </div>
+
+                    <div class="result-analysis" id="analysis"></div>
+
+                    <div class="cases-stf">
+                        <h3>📚 Casos reais semelhantes</h3>
+                        <div id="cases-list"></div>
+                    </div>
+
+                    <div class="feedback-detalhado" id="feedback"></div>
+
+                    <div class="result-actions">
+                        <button class="btn btn-primary" id="restart">↻ Refazer simulação</button>
+                        <button class="btn btn-secondary" id="share">📤 Compartilhar resultado</button>
+                        <button class="btn btn-outline" id="print">🖨️ Imprimir</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Baseado em casos reais revisados pelo STF · © 2025 Arquiteturas da Dúvida</p>
+            <p class="small">Referência: PPSC (2019); Findley & Scott (2006); Elaad (2022)</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
